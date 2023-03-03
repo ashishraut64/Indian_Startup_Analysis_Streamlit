@@ -25,7 +25,7 @@ def overall_analysis():
         st.metric('Average Investment',str(avg) + " Cr")
     with col4:
         num=df['startup'].nunique()
-        st.metric('Total Funded Startups',str(num) + ' Cr')
+        st.metric('Total Funded Startups',str(num))
     #MOM Chart
     if 'key' not in st.session_state:
         st.session_state['key'] = 'value'
