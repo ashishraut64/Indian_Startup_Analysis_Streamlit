@@ -157,7 +157,7 @@ def startup_details(startup):
     st.subheader('Investors and Investment')
     col1,col2=st.columns(2)
     with col1:
-        temp = df[df['startup'] == 'Shuttl'].groupby('investors')['amount'].sum().reset_index()
+        temp = df[df['startup'] == startup].groupby('investors')['amount'].sum().reset_index()
         temp.rename(columns={'investors': 'Investors', 'amount': 'Amount'}, inplace=True)
         st.dataframe(temp)
     with col2:
@@ -165,7 +165,7 @@ def startup_details(startup):
         st.plotly_chart(fig2)
     #Funding Rounds
     st.subheader('Funding Round Details')
-    temp=df[df['startup'] == 'Shuttl'][['rounds', 'date', 'investors']].set_index('rounds')
+    temp=df[df['startup'] == startup][['rounds', 'date', 'investors']].set_index('rounds')
     st.dataframe(temp)
 
 
